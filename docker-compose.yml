@@ -57,6 +57,8 @@ services:
     build:
       context: .
       dockerfile: docker/local/Dockerfile-wptagent
+    cap_add:
+      - NET_ADMIN
     command: python3 wptagent.py -vvvv --xvfb --dockerized --server  http://web/work/ --location Test --key 123456789
   #### ####
 
