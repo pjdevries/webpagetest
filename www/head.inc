@@ -78,6 +78,9 @@ $privateInstall = true;
 if (stristr($_SERVER['HTTP_HOST'], 'webpagetest.org') !== false) {
     $privateInstall = false;
 }
+// Obix >>>
+$privateInstall = true;
+// <<< Obix
 
 $blkLogo = false;
 if (isset($_REQUEST['color'])) {

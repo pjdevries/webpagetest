@@ -84,6 +84,9 @@ $server_host ??= isset($_SERVER) && isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTT
 if (stristr($server_host, 'webpagetest.org') !== false) {
     $privateInstall = false;
 }
+// Obix >>>
+$privateInstall = true;
+// <<< Obix
 
 $blkLogo = false;
 if (isset($_REQUEST['color'])) {

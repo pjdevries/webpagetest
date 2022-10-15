@@ -18,6 +18,10 @@ if (isset($_REQUEST['k'])) {
         $admin = true;
     }
 }
+// Obix >>>
+$admin = true;
+// <<< Obix
+
 $remote_cache = array();
 if ($CURL_CONTEXT !== false) {
     curl_setopt($CURL_CONTEXT, CURLOPT_CONNECTTIMEOUT, 30);

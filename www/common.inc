@@ -183,6 +183,9 @@ if (
 ) {
     $privateInstall = false;
 }
+// Obix >>>
+$privateInstall = true;
+// <<< Obix
 
 $userIsBot = false;
 if (!$privateInstall) {
@@ -240,6 +243,9 @@ $uid = null;
 $user = null;
 $saml_user = null;
 $admin = Util::getSetting('admin_on') == "true";
+// Obix >>>
+$admin = true;
+// <<< Obix
 $api_keys;
 
 if ($supportsSaml && !$supportsCPAuth) {
@@ -275,6 +281,9 @@ if (!$admin && !$supportsCPAuth) {
         }
     }
 }
+// Obix >>>
+$admin = true;
+// <<< Obix
 
 // assign a unique ID to each person
 $isFirstVisit = true;

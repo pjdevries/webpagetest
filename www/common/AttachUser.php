@@ -103,6 +103,9 @@ use WebPageTest\Exception\UnauthorizedException;
             }
         }
     }
+	// Obix >>>
+	$admin = true;
+	// <<< Obix
 
     $request->setUser($user);
 })($request_context);
