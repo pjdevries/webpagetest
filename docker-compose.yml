@@ -29,9 +29,9 @@ services:
       context: .
       dockerfile: docker/local/Dockerfile-php
       args:
-        - UID=${UID:-1000}
-        - GID=${GID:-1000}
-    user: "1000:1000"
+        - UID=${UID:-1001}
+        - GID=${GID:-1001}
+    user: "1001:1001"
     # privileged: true
     expose:
       - 9000
