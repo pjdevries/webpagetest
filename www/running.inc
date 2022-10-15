@@ -88,12 +88,14 @@
 
             <?php } ?>
             <?php
+            /* Obix >>>
             $tip = GetTip();
             if (strlen($tip)) {
                 echo '<div class="tip box"><div class="tipHead"><h2>Did you know?</h2><span class="tip_note">(all links open in a new window/tab)</span></div>';
                 echo $tip;
                 echo "</div>\n";
             }
+            /* <<< Obix
             ?>
             <?php include('footer.inc'); ?>
         </div>
