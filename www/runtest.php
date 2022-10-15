@@ -3539,6 +3539,9 @@ function CheckRateLimit($test, &$error)
     $monthly_limit = Util::getSetting('rate_limit_anon_monthly') ?: 50;
     $cmrl = new RateLimiter($test['ip'], $monthly_limit);
     $passesMonthly = $cmrl->check($total_runs);
+	// Obix >>>
+	$passesMonthly = true;
+	// <<< Obix
 
     if (!$passesMonthly) {
         $error = "<p>You've reached the limit for logged-out tests this month, but don't worry! You can keep testing once you log in, which will give you access to other nice features like:</p>";
