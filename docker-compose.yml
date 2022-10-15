@@ -10,7 +10,7 @@ services:
     # privileged: true
     ports:
       - target: 80
-        published: 80
+        published: 18011
     deploy:
       replicas: 1
       placement:
