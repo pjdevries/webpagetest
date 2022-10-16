@@ -56,7 +56,6 @@ $requestUri = 'runtest.php?' . implode('&',
 		array_map(fn(string $key, string $value) => $key . '=' . $value, array_keys($wptParams), array_values($wptParams)));
 $request = new Request('GET', $requestUri);
 $response = $client->send($request, $reqParams);
-//$response = $client->request('GET', $requestUri, $reqParams);
 
 $responseStatusCode = $response->getStatusCode();
 
@@ -82,7 +81,6 @@ $testId = $responseData['data']['testId'];
 $requestUri = 'testStatus.php?test=' . $testId;
 $request = new Request('GET', $requestUri);
 $response = $client->send($request, $reqParams);
-//$response = $client->request('GET', $requestUri, $reqParams);
 
 $responseStatusCode = $response->getStatusCode();
 
