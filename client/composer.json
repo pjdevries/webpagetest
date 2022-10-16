@@ -1,0 +1,6 @@
+{
+  "require": {
+    "spatie/async": "^1.5",
+    "guzzlehttp/guzzle": "^7.5"
+  }
+}
