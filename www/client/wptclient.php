@@ -40,13 +40,10 @@ $wptParams = [
 	'lighthouse' => '1',      // 0: no Lighthous test; 1:  have a lighthouse test performed (Chrome-only, wptagent agents only)
 	'private' => '0',         // 0: make the test visible in the public history log; 1: make the test private.
 	'f' => 'json',          // The format to return: "xml" or "json"; default is a redirect.
-	'pingback' => 'https://wpt.obixhosting.nl/client/wptpingback.php'     // URL to ping when the test is complete. The test ID will be passed as an "id" parameter.
+	// 'pingback' => 'https://wpt.obixhosting.nl/client/wptpingback.php'     // URL to ping when the test is complete. The test ID will be passed as an "id" parameter.
 ];
 $reqParams = [
-	'auth' => [
-		'username' => 'poortwachter',
-		'password' => 'A Taco extrudes the Pullover'
-	]
+	'auth' => ['poortwachter', 'A Taco extrudes the Pullover']
 ];
 
 $client = new Client([
@@ -57,7 +54,7 @@ $client = new Client([
 
 $requestUri = 'runtest.php?' . implode('&',
 		array_map(fn(string $key, string $value) => $key . '=' . $value, array_keys($wptParams), array_values($wptParams)));
-$request = new Request('GET', $requestUri);
+$request = new Request('GET', $requestUri, $reqParams);
 $response = $client->send($request);
 
 $responseStatusCode = $response->getStatusCode();
