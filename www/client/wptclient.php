@@ -46,18 +46,16 @@ $reqParams = [
 	'auth' => ['poortwachter', 'A Taco extrudes the Pullover']
 ];
 
-//$client = new Client([
-//	// Base URI is used with relative requests
-//	'base_uri' => $baseUri,
-//	'timeout'  => 2.0,
-//]);
-//
+$client = new Client([
+	// Base URI is used with relative requests
+	'base_uri' => $baseUri,
+	'timeout'  => 2.0,
+]);
+
 $requestUri = 'runtest.php?' . implode('&',
 		array_map(fn(string $key, string $value) => $key . '=' . $value, array_keys($wptParams), array_values($wptParams)));
 //$request = new Request('GET', $requestUri);
 //$response = $client->send($request, $reqParams);
-
-$client = new Client();
 $response = $client->get($requestUri, $reqParams);
 
 $responseStatusCode = $response->getStatusCode();
@@ -82,8 +80,9 @@ if ($testStatusCode >= 300)
 
 $testId = $responseData['data']['testId'];
 $requestUri = 'testStatus.php?test=' . $testId;
-$request = new Request('GET', $requestUri);
-$response = $client->send($request);
+//$request = new Request('GET', $requestUri);
+//$response = $client->send($request);
+$response = $client->get($requestUri, $reqParams);
 
 $responseStatusCode = $response->getStatusCode();
 
