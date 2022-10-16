@@ -30,7 +30,7 @@ use GuzzleHttp\Psr7\Request;
 $baseUri = 'https://wpt.obixhosting.nl';
 $wptParams = [
 	'url' => 'https://doevetest-i.obixconcept.nl',
-	'label' => urlencode('API client test'),
+	'label' => urlencode('API cli client test'),
 	'runs' => '3',            // The number of test runs (1-10 on the public instance).
 	'fvonly' => '0',          // 1: skip the Repeat View test; 0: run a test against both the first view and the repeat view for a given test.
 	'login' => 'gtmetrix',
@@ -40,7 +40,7 @@ $wptParams = [
 	'lighthouse' => '1',      // 0: no Lighthous test; 1:  have a lighthouse test performed (Chrome-only, wptagent agents only)
 	'private' => '0',         // 0: make the test visible in the public history log; 1: make the test private.
 	'f' => 'json',          // The format to return: "xml" or "json"; default is a redirect.
-	// 'pingback' => ''     // URL to ping when the test is complete. The test ID will be passed as an "id" parameter.
+	'pingback' => 'https://wpt.obixhosting.nl/client/wptpingback.php'     // URL to ping when the test is complete. The test ID will be passed as an "id" parameter.
 ];
 $reqParams = [
 	'auth' => [
