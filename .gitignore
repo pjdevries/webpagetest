@@ -120,3 +120,5 @@ www/beanstalk.php
 
 # developer settings
 www/dev.php
+
+vendor
